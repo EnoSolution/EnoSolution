@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EnoGateway.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SerialComPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COM5</Value>
+    </Setting>
+    <Setting Name="MulticastAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">239.0.0.222</Value>
+    </Setting>
+    <Setting Name="MulticastPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2222</Value>
+    </Setting>
+    <Setting Name="ListeningPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2223</Value>
+    </Setting>
+    <Setting Name="ArchiveFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
