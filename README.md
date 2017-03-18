@@ -24,6 +24,6 @@ D'autres applicatons viendront compléter EnoGateway pour composer une véritabl
 
 Le projet est en cours de développement et n'en est encore qu'à ses débuts. Les modules et la documentation seront mis en ligne au fur et à mesure, à commencer par EnoGateway.
 
-Soyez patients. Vous le savez aussi bien que moi, c'est toujours le temps qui fait le plus défaut à un développeur...
+Soyez patients. Vous aussi bien que moi que c'est toujours le temps qui fait le plus défaut à un développeur...
 
 Enos
