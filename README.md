@@ -1,5 +1,7 @@
 # EnoSolution
 
+English translation at the end of the document.
+
 EnoSolution est une suite domotique basée sur le protocole EnOcean.
 - EnoSolution est un projet libre, placé sous licence GPL, et développé en C# sous Visual Studio 2017 Community.
 - EnOcean est un protocole domotique ouvert, documenté, normalisé ISO, et supporté par de nombreux constructeurs de capteurs et actionneurs.
@@ -25,5 +27,34 @@ D'autres applicatons viendront compléter EnoGateway pour composer une véritabl
 Le projet est en cours de développement et n'en est encore qu'à ses débuts. Les modules et la documentation seront mis en ligne au fur et à mesure, à commencer par EnoGateway.
 
 Soyez patients. Vous savez aussi bien que moi que c'est toujours le temps qui fait le plus défaut à un développeur...
+
+Enos
+
+
+EnoSolution is a home automation suite based on the EnOcean protocol.
+- EnoSolution is a free project, licensed under the GPL, and developed in C # under Visual Studio 2017 Community.
+- EnOcean is an open, documented, standardized ISO protocol, supported by many sensor and actuator manufacturers.
+
+Broadly speaking, the EnoSolution project is built around a Windows service called EnoGateway that acts as a gateway between the EnOcean radio network and the local network. The other modules in the suite use EnoGateway to interact with the EnOcean network. Each module can thus fulfill its own function (configuration, automation, HMI, debugging tools or installation aid).
+
+This architecture is dictated by the fact that the dialogue with an EnOcean network necessarily passes through a USB dongle that integrates an EnOcean radio transmitter / receiver. But this dongle is seen by Windows as a serial port, which can therefore only be opened by a single application. To avoid this constraint, you must have a hardware or software IP gateway between the serial port on which the dongle is connected and the local IP network. This is the role of EnoGateway.
+
+EnoGateway receives the telegrams via an EnOcean USB dongle (USB300 or USB310) and re-transmits them in UDP multicast to allow several applications to subscribe. In the other direction, EnoGateway listens to the telegrams transmitted in UDP by the applications and then calculates the BASE_ID and the CRCs before sending the telegrams on the radio network via the dongle.
+
+EnoGateway is also the only application in the EnoSolution suite that can be used on its own by a developer who would like to start programming EnOcean applications while minimizing the initial software investment because EnoGatway:
+- Allows the applications that receive to dispense with the control of the validity of the received telegrams.
+- Allows the applications that emit not to worry about CRC calculation (it is done by EnoGateway).
+- Allows the emitting applications not to have to enter the BASE_ID of the dongle (you need only to specify a relative identifier of the transmitter between 0 and 127).
+
+Other applications will complement EnoGateway to create a real software suite. Among the applications envisaged or under development are:
+- EnoViewer: A dedicated debugging application for displaying telegrams transiting the EnOcean network.
+- EnoLearn: An application that facilitates the pairing between the actuators of the installation and the sensors emulated by the applications (via the 128 identifiers available to the dongle to transmit).
+- EnoConfig: An application to define the sensors of the installation (pushbuttons, sensors of temperature, humidity, luminosity, weather station, etc, including equipment name, EnOcean equipment profile, And the parameters for converting the received raw values into values expressed in exploitable units.
+- EnoDecision: An application of the Windows service type dedicated to the execution of the automation of the installation, such as closing of the shutters via an astronomical clock, the rise of the blinds in wind too strong, the closing of the blades of the bioclimatic pergola on Rain detection, etc. The configuration of these automations will be carried out by EnoConfig.
+- EnoControl: An HMI software intended to run on a PC or a wall digital tablet running Windows. This application will allow you to have a graphical overview of the installation, and to launch commands or sequences of command with a simple click on an object.
+
+The project is under development and is still in its infancy. The modules and documentation will be delivered as you go, starting with EnoGateway.
+
+Be patient. You know as well as I that it is always the time that is most lacking to a developer ...
 
 Enos
